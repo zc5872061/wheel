@@ -10,6 +10,7 @@
 #define __FreeType2Demo__Scene__
 
 #include <vector>
+#include "Polygon.h"
 
 class Scene
 {
@@ -20,6 +21,6 @@ public:
     void tick();
     void draw();
     
-    
+    std::vector<MyPolygon*> polygons;
 };
 #endif /* defined(__FreeType2Demo__Scene__) */

@@ -84,10 +84,6 @@ void Game::resizeWindow(int w,int h)
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     
-//    if (w <= h)
-//        glOrtho (-nRange, nRange, -nRange*h/w, nRange*h/w, -nRange, nRange);
-//    else
-//        glOrtho (-nRange*w/h, nRange*w/h, -nRange, nRange, -nRange, nRange);
     glOrtho (0.0, mWidth, mHeight, 0, -1.0, 1.0);
     
     glMatrixMode(GL_MODELVIEW);
@@ -97,8 +93,6 @@ void Game::resizeWindow(int w,int h)
     glLoadIdentity();
     glClearDepth(1.0f);
     glDisable(GL_CULL_FACE);
-    
-    
 }
 
 void Game::start()

@@ -45,8 +45,15 @@ public:
     void draw();
     void draw(float* color);
     void drawNormals();
-    
+    void updateAll();
+    void updateNormals();
+    void updateClockwise();
+    vector2f getVertex(int i) { return m_vertics[i % getNumVerticies()]; }
+    bool isClockwise() { return m_clockwise; }
+    void setVertex(int i, vector2f v) { m_vertics[i % getNumVerticies()] = v; updateAll();}
     std::vector<MyEdge*> getFacingEdges(vector2f point);
+    int getNumVerticies() { return m_numVerticies; }
+    vector2f* getNormals() { return m_normals; }
 protected:
     void resetVertics();
 protected:
