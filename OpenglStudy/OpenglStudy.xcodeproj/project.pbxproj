@@ -16,6 +16,8 @@
 		3F96C42C1B497C3200EBCE78 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F96C42B1B497C3200EBCE78 /* libGLEW.a */; };
 		3F96C42E1B497ED400EBCE78 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F96C42D1B497ED400EBCE78 /* game.cpp */; };
 		3F96C4321B4AD65500EBCE78 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F96C4301B4AD65500EBCE78 /* Scene.cpp */; };
+		3F9FCFBD1B4C27FC00936472 /* Lighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FCFB91B4C27FC00936472 /* Lighting.cpp */; };
+		3F9FCFBE1B4C27FC00936472 /* Polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FCFBB1B4C27FC00936472 /* Polygon.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +48,10 @@
 		3F96C4301B4AD65500EBCE78 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
 		3F96C4311B4AD65500EBCE78 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		3F96C4331B4ADA6400EBCE78 /* glCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glCommon.h; sourceTree = "<group>"; };
+		3F9FCFB91B4C27FC00936472 /* Lighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lighting.cpp; sourceTree = "<group>"; };
+		3F9FCFBA1B4C27FC00936472 /* Lighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lighting.h; sourceTree = "<group>"; };
+		3F9FCFBB1B4C27FC00936472 /* Polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polygon.cpp; sourceTree = "<group>"; };
+		3F9FCFBC1B4C27FC00936472 /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,10 @@
 		3F8C53301B3B024C002949C4 /* FreeType2Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3F9FCFB91B4C27FC00936472 /* Lighting.cpp */,
+				3F9FCFBA1B4C27FC00936472 /* Lighting.h */,
+				3F9FCFBB1B4C27FC00936472 /* Polygon.cpp */,
+				3F9FCFBC1B4C27FC00936472 /* Polygon.h */,
 				3F96C41E1B4974B600EBCE78 /* main.cpp */,
 				3F96C4201B49751100EBCE78 /* game.h */,
 				3F96C42D1B497ED400EBCE78 /* game.cpp */,
@@ -159,8 +169,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F96C4321B4AD65500EBCE78 /* Scene.cpp in Sources */,
+				3F9FCFBE1B4C27FC00936472 /* Polygon.cpp in Sources */,
 				3F96C41F1B4974B600EBCE78 /* main.cpp in Sources */,
 				3F96C42E1B497ED400EBCE78 /* game.cpp in Sources */,
+				3F9FCFBD1B4C27FC00936472 /* Lighting.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +281,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include/freetype2/,
-					/Users/chukie/Study/WorkWork/wheel/FreeType2Demo/thirdpart/include/GL,
+					/Users/chukie/Study/WorkWork/wheel/OpenglStudy/thirdpart/include/GL,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -291,7 +303,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include/freetype2/,
-					/Users/chukie/Study/WorkWork/wheel/FreeType2Demo/thirdpart/include/GL,
+					/Users/chukie/Study/WorkWork/wheel/OpenglStudy/thirdpart/include/GL,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
