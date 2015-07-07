@@ -27,9 +27,7 @@ void Scene::tick()
 void Scene::draw()
 {
     glPolygonMode(GL_FRONT, GL_FILL); // 设置正面为填充模式
-    
     glPolygonMode(GL_BACK, GL_LINE); // 设置反面为线形模式
-    
     
     //绘制一个三角形
     
@@ -47,9 +45,4 @@ void Scene::draw()
         glEnd();//结束
         
     }
-    // Finished Drawing The Triangl
-    //Draw things here
-    //curScene->draw();
-    //
-
 }
