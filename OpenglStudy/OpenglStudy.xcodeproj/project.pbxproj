@@ -7,51 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F55805C1B4CC66200D8954F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F55805B1B4CC66200D8954F /* SDL2.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		3F75EAE51B53843600570341 /* hello-gl.c in Sources */ = {isa = PBXBuildFile; fileRef = 3F75EAD81B53843600570341 /* hello-gl.c */; };
+		3F75EAE61B53843600570341 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 3F75EADF1B53843600570341 /* util.c */; };
 		3F8C539A1B3B1FAF002949C4 /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8C53991B3B1FAF002949C4 /* libfreetype.a */; };
 		3F8C539C1B3B2096002949C4 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8C539B1B3B2096002949C4 /* GLUT.framework */; };
 		3F96C3C91B402C9200EBCE78 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F96C3C81B402C9200EBCE78 /* OpenGL.framework */; };
-		3F96C41D1B49748300EBCE78 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F96C41C1B49748300EBCE78 /* SDL2.framework */; };
-		3F96C41F1B4974B600EBCE78 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F96C41E1B4974B600EBCE78 /* main.cpp */; };
-		3F96C4221B49795500EBCE78 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F96C4211B49795500EBCE78 /* SDL2_image.framework */; };
 		3F96C42C1B497C3200EBCE78 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F96C42B1B497C3200EBCE78 /* libGLEW.a */; };
-		3F96C42E1B497ED400EBCE78 /* game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F96C42D1B497ED400EBCE78 /* game.cpp */; };
-		3F96C4321B4AD65500EBCE78 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F96C4301B4AD65500EBCE78 /* Scene.cpp */; };
-		3F9FCFBD1B4C27FC00936472 /* Lighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FCFB91B4C27FC00936472 /* Lighting.cpp */; };
-		3F9FCFBE1B4C27FC00936472 /* Polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FCFBB1B4C27FC00936472 /* Polygon.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3F8C532C1B3B024C002949C4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F55805B1B4CC66200D8954F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = thirdpart/SDL2.framework; sourceTree = "<group>"; };
+		3F75EAD81B53843600570341 /* hello-gl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "hello-gl.c"; path = "test2/hello-gl.c"; sourceTree = "<group>"; };
+		3F75EAD91B53843600570341 /* hello-gl.f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hello-gl.f.glsl"; path = "test2/hello-gl.f.glsl"; sourceTree = "<group>"; };
+		3F75EADA1B53843600570341 /* hello-gl.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "hello-gl.v.glsl"; path = "test2/hello-gl.v.glsl"; sourceTree = "<group>"; };
+		3F75EADB1B53843600570341 /* naive-perspective-rotation.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "naive-perspective-rotation.v.glsl"; path = "test2/naive-perspective-rotation.v.glsl"; sourceTree = "<group>"; };
+		3F75EADC1B53843600570341 /* orthographic-rotation.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "orthographic-rotation.v.glsl"; path = "test2/orthographic-rotation.v.glsl"; sourceTree = "<group>"; };
+		3F75EADD1B53843600570341 /* perspective-rotation.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "perspective-rotation.v.glsl"; path = "test2/perspective-rotation.v.glsl"; sourceTree = "<group>"; };
+		3F75EADE1B53843600570341 /* rotation.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = rotation.v.glsl; path = test2/rotation.v.glsl; sourceTree = "<group>"; };
+		3F75EADF1B53843600570341 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = util.c; path = test2/util.c; sourceTree = "<group>"; };
+		3F75EAE01B53843600570341 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = test2/util.h; sourceTree = "<group>"; };
+		3F75EAE11B53843600570341 /* view-frustum-rotation.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "view-frustum-rotation.v.glsl"; path = "test2/view-frustum-rotation.v.glsl"; sourceTree = "<group>"; };
+		3F75EAE21B53843600570341 /* window-object-scaled-rotation.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "window-object-scaled-rotation.v.glsl"; path = "test2/window-object-scaled-rotation.v.glsl"; sourceTree = "<group>"; };
+		3F75EAE31B53843600570341 /* window-scaled-rotation.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "window-scaled-rotation.v.glsl"; path = "test2/window-scaled-rotation.v.glsl"; sourceTree = "<group>"; };
+		3F75EAE71B5393AE00570341 /* view-orth-rotation.v.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "view-orth-rotation.v.glsl"; path = "test2/view-orth-rotation.v.glsl"; sourceTree = "<group>"; };
 		3F8C532E1B3B024C002949C4 /* OpenglStudy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenglStudy; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8C53971B3B187D002949C4 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = ../../../../../../usr/local/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
 		3F8C53991B3B1FAF002949C4 /* libfreetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreetype.a; path = ../../../../../../usr/local/lib/libfreetype.a; sourceTree = "<group>"; };
 		3F8C539B1B3B2096002949C4 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		3F96C3C81B402C9200EBCE78 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		3F96C41C1B49748300EBCE78 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = thirdpart/SDL2.framework; sourceTree = "<group>"; };
-		3F96C41E1B4974B600EBCE78 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3F96C4201B49751100EBCE78 /* game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
-		3F96C4211B49795500EBCE78 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = thirdpart/SDL2_image.framework; sourceTree = "<group>"; };
 		3F96C42B1B497C3200EBCE78 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = thirdpart/lib/libGLEW.a; sourceTree = "<group>"; };
-		3F96C42D1B497ED400EBCE78 /* game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = game.cpp; sourceTree = "<group>"; };
-		3F96C42F1B4AD0F000EBCE78 /* Vector2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
-		3F96C4301B4AD65500EBCE78 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
-		3F96C4311B4AD65500EBCE78 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
-		3F96C4331B4ADA6400EBCE78 /* glCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glCommon.h; sourceTree = "<group>"; };
-		3F9FCFB91B4C27FC00936472 /* Lighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lighting.cpp; sourceTree = "<group>"; };
-		3F9FCFBA1B4C27FC00936472 /* Lighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lighting.h; sourceTree = "<group>"; };
-		3F9FCFBB1B4C27FC00936472 /* Polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polygon.cpp; sourceTree = "<group>"; };
-		3F9FCFBC1B4C27FC00936472 /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polygon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +56,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F55805C1B4CC66200D8954F /* SDL2.framework in Frameworks */,
 				3F96C42C1B497C3200EBCE78 /* libGLEW.a in Frameworks */,
-				3F96C4221B49795500EBCE78 /* SDL2_image.framework in Frameworks */,
-				3F96C41D1B49748300EBCE78 /* SDL2.framework in Frameworks */,
 				3F96C3C91B402C9200EBCE78 /* OpenGL.framework in Frameworks */,
 				3F8C539C1B3B2096002949C4 /* GLUT.framework in Frameworks */,
 				3F8C539A1B3B1FAF002949C4 /* libfreetype.a in Frameworks */,
@@ -74,9 +70,8 @@
 		3F8C53251B3B024C002949C4 = {
 			isa = PBXGroup;
 			children = (
+				3F55805B1B4CC66200D8954F /* SDL2.framework */,
 				3F96C42B1B497C3200EBCE78 /* libGLEW.a */,
-				3F96C4211B49795500EBCE78 /* SDL2_image.framework */,
-				3F96C41C1B49748300EBCE78 /* SDL2.framework */,
 				3F96C3C81B402C9200EBCE78 /* OpenGL.framework */,
 				3F8C539B1B3B2096002949C4 /* GLUT.framework */,
 				3F8C53991B3B1FAF002949C4 /* libfreetype.a */,
@@ -97,17 +92,19 @@
 		3F8C53301B3B024C002949C4 /* FreeType2Demo */ = {
 			isa = PBXGroup;
 			children = (
-				3F9FCFB91B4C27FC00936472 /* Lighting.cpp */,
-				3F9FCFBA1B4C27FC00936472 /* Lighting.h */,
-				3F9FCFBB1B4C27FC00936472 /* Polygon.cpp */,
-				3F9FCFBC1B4C27FC00936472 /* Polygon.h */,
-				3F96C41E1B4974B600EBCE78 /* main.cpp */,
-				3F96C4201B49751100EBCE78 /* game.h */,
-				3F96C42D1B497ED400EBCE78 /* game.cpp */,
-				3F96C42F1B4AD0F000EBCE78 /* Vector2.h */,
-				3F96C4301B4AD65500EBCE78 /* Scene.cpp */,
-				3F96C4311B4AD65500EBCE78 /* Scene.h */,
-				3F96C4331B4ADA6400EBCE78 /* glCommon.h */,
+				3F75EAE71B5393AE00570341 /* view-orth-rotation.v.glsl */,
+				3F75EAD81B53843600570341 /* hello-gl.c */,
+				3F75EAD91B53843600570341 /* hello-gl.f.glsl */,
+				3F75EADA1B53843600570341 /* hello-gl.v.glsl */,
+				3F75EADB1B53843600570341 /* naive-perspective-rotation.v.glsl */,
+				3F75EADC1B53843600570341 /* orthographic-rotation.v.glsl */,
+				3F75EADD1B53843600570341 /* perspective-rotation.v.glsl */,
+				3F75EADE1B53843600570341 /* rotation.v.glsl */,
+				3F75EADF1B53843600570341 /* util.c */,
+				3F75EAE01B53843600570341 /* util.h */,
+				3F75EAE11B53843600570341 /* view-frustum-rotation.v.glsl */,
+				3F75EAE21B53843600570341 /* window-object-scaled-rotation.v.glsl */,
+				3F75EAE31B53843600570341 /* window-scaled-rotation.v.glsl */,
 			);
 			path = FreeType2Demo;
 			sourceTree = "<group>";
@@ -168,11 +165,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F96C4321B4AD65500EBCE78 /* Scene.cpp in Sources */,
-				3F9FCFBE1B4C27FC00936472 /* Polygon.cpp in Sources */,
-				3F96C41F1B4974B600EBCE78 /* main.cpp in Sources */,
-				3F96C42E1B497ED400EBCE78 /* game.cpp in Sources */,
-				3F9FCFBD1B4C27FC00936472 /* Lighting.cpp in Sources */,
+				3F75EAE51B53843600570341 /* hello-gl.c in Sources */,
+				3F75EAE61B53843600570341 /* util.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +267,7 @@
 		3F8C53361B3B024C002949C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/thirdpart",
@@ -281,8 +276,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include/freetype2/,
-					/Users/chukie/Study/WorkWork/wheel/OpenglStudy/thirdpart/include/GL,
+					"$(PROJECT_DIR)/thirdpart/include/GL",
+					"$(PROJECT_DIR)/thirdpart/SDL2-2.0.3/include",
+					"$(PROJECT_DIR)/thirdpart/include/",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(PROJECT_DIR)/thirdpart/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/thirdpart/lib",
@@ -295,6 +293,7 @@
 		3F8C53371B3B024C002949C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/thirdpart",
@@ -303,8 +302,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include/freetype2/,
-					/Users/chukie/Study/WorkWork/wheel/OpenglStudy/thirdpart/include/GL,
+					"$(PROJECT_DIR)/thirdpart/include/GL",
+					"$(PROJECT_DIR)/thirdpart/SDL2-2.0.3/include",
+					"$(PROJECT_DIR)/thirdpart/include/",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(PROJECT_DIR)/thirdpart/";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/thirdpart/lib",

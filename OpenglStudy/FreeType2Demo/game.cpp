@@ -208,59 +208,59 @@ void Game::draw()
     curScene->draw();
     
 //    
-//    glMatrixMode(GL_PROJECTION);
-//    glLoadIdentity();				// Reset The Projection Matrix
-//    
-//    gluPerspective(45.0f,(GLfloat)800.0/(GLfloat)600.0,0.1f,100.0f);	// Calculate The Aspect Ratio Of The Window
-//    
-//    glMatrixMode(GL_MODELVIEW);
-//    
-//    glLoadIdentity();				// Reset The View
-//    
-//    glTranslatef(-1.5f,0.0f,-6.0f);		// Move Left 1.5 Units And Into The Screen 6.0
-//    
-//    glRotatef(ticks,0.0f,1.0f,0.0f);		// Rotate The Pyramid On The Y axis
-//    
-//    // draw a pyramid (in smooth coloring mode)
-//    glBegin(GL_POLYGON);				// start drawing a pyramid
-//    
-//    
-//    
-//    
-//    // front face of pyramid
-//    glColor3f(1.0f,0.0f,0.0f);			// Set The Color To Red
-//    glVertex3f(0.0f, 1.0f, 0.0f);		        // Top of triangle (front)
-//    glColor3f(0.0f,1.0f,0.0f);			// Set The Color To Green
-//    glVertex3f(-1.0f,-1.0f, 1.0f);		// left of triangle (front)
-//    glColor3f(0.0f,0.0f,1.0f);			// Set The Color To Blue
-//    glVertex3f(1.0f,-1.0f, 1.0f);		        // right of traingle (front)
-//    
-//    // right face of pyramid
-//    glColor3f(1.0f,0.0f,0.0f);			// Red
-//    glVertex3f( 0.0f, 1.0f, 0.0f);		// Top Of Triangle (Right)
-//    glColor3f(0.0f,0.0f,1.0f);			// Blue
-//    glVertex3f( 1.0f,-1.0f, 1.0f);		// Left Of Triangle (Right)
-//    glColor3f(0.0f,1.0f,0.0f);			// Green
-//    glVertex3f( 1.0f,-1.0f, -1.0f);		// Right Of Triangle (Right)
-//    
-//    // back face of pyramid
-//    glColor3f(1.0f,0.0f,0.0f);			// Red
-//    glVertex3f( 0.0f, 1.0f, 0.0f);		// Top Of Triangle (Back)
-//    glColor3f(0.0f,1.0f,0.0f);			// Green
-//    glVertex3f( 1.0f,-1.0f, -1.0f);		// Left Of Triangle (Back)
-//    glColor3f(0.0f,0.0f,1.0f);			// Blue
-//    glVertex3f(-1.0f,-1.0f, -1.0f);		// Right Of Triangle (Back)
-//    
-//    // left face of pyramid.
-//    glColor3f(1.0f,0.0f,0.0f);			// Red
-//    glVertex3f( 0.0f, 1.0f, 0.0f);		// Top Of Triangle (Left)
-//    glColor3f(0.0f,0.0f,1.0f);			// Blue
-//    glVertex3f(-1.0f,-1.0f,-1.0f);		// Left Of Triangle (Left)
-//    glColor3f(0.0f,1.0f,0.0f);			// Green
-//    glVertex3f(-1.0f,-1.0f, 1.0f);		// Right Of Triangle (Left)
-//    
-//    glEnd();
-//    glLoadIdentity();
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();				// Reset The Projection Matrix
+    
+    gluPerspective(45.0f,(GLfloat)800.0/(GLfloat)600.0,0.1f,100.0f);	// Calculate The Aspect Ratio Of The Window
+    
+    glMatrixMode(GL_MODELVIEW);
+    
+    glLoadIdentity();				// Reset The View
+    
+    glTranslatef(-1.5f,0.0f,-6.0f);		// Move Left 1.5 Units And Into The Screen 6.0
+    
+    glRotatef(ticks,0.0f,1.0f,0.0f);		// Rotate The Pyramid On The Y axis
+    
+    // draw a pyramid (in smooth coloring mode)
+    glBegin(GL_POLYGON);				// start drawing a pyramid
+    
+    
+    
+    
+    // front face of pyramid
+    glColor3f(1.0f,0.0f,0.0f);			// Set The Color To Red
+    glVertex3f(0.0f, 1.0f, 0.0f);		        // Top of triangle (front)
+    glColor3f(0.0f,1.0f,0.0f);			// Set The Color To Green
+    glVertex3f(-1.0f,-1.0f, 1.0f);		// left of triangle (front)
+    glColor3f(0.0f,0.0f,1.0f);			// Set The Color To Blue
+    glVertex3f(1.0f,-1.0f, 1.0f);		        // right of traingle (front)
+    
+    // right face of pyramid
+    glColor3f(1.0f,0.0f,0.0f);			// Red
+    glVertex3f( 0.0f, 1.0f, 0.0f);		// Top Of Triangle (Right)
+    glColor3f(0.0f,0.0f,1.0f);			// Blue
+    glVertex3f( 1.0f,-1.0f, 1.0f);		// Left Of Triangle (Right)
+    glColor3f(0.0f,1.0f,0.0f);			// Green
+    glVertex3f( 1.0f,-1.0f, -1.0f);		// Right Of Triangle (Right)
+    
+    // back face of pyramid
+    glColor3f(1.0f,0.0f,0.0f);			// Red
+    glVertex3f( 0.0f, 1.0f, 0.0f);		// Top Of Triangle (Back)
+    glColor3f(0.0f,1.0f,0.0f);			// Green
+    glVertex3f( 1.0f,-1.0f, -1.0f);		// Left Of Triangle (Back)
+    glColor3f(0.0f,0.0f,1.0f);			// Blue
+    glVertex3f(-1.0f,-1.0f, -1.0f);		// Right Of Triangle (Back)
+    
+    // left face of pyramid.
+    glColor3f(1.0f,0.0f,0.0f);			// Red
+    glVertex3f( 0.0f, 1.0f, 0.0f);		// Top Of Triangle (Left)
+    glColor3f(0.0f,0.0f,1.0f);			// Blue
+    glVertex3f(-1.0f,-1.0f,-1.0f);		// Left Of Triangle (Left)
+    glColor3f(0.0f,1.0f,0.0f);			// Green
+    glVertex3f(-1.0f,-1.0f, 1.0f);		// Right Of Triangle (Left)
+    
+    glEnd();
+    glLoadIdentity();
     SDL_GL_SwapWindow(window);
 }
 
