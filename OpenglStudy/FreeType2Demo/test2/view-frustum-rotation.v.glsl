@@ -140,10 +140,10 @@ void main()
         //* position;
     //mat4 my_perspective = view_frustum(radians(45.0), 4.0/3.0, -5.0, 50.0);
     mat4 my_perspective = calculatePerspective(70.0, 4.0/3.0, 4.0, 1500.0);
-    mat4 my_viewMatrix = view_matrix(-10.0,10.0,5.0,  0.0,0.0,0.0,  0.0,1.0,0.0);
-    mat4 my_orth_matrix = orth_matrix(0.0,800.0,0.0,600.0, -1.0, 1.5);
-    
-    gl_Position = my_perspective*my_viewMatrix*position;
+    //mat4 my_viewMatrix = view_matrix(-10.0,10.0,5.0,  0.0,0.0,0.0,  0.0,1.0,0.0);
+    mat4 my_orth_matrix = orth_matrix(0.0,800.0,0.0,600.0, -1.0, 10.5);
+    mat4 my_viewMatrix = view_matrix(0.0,0.0,1.0,  0.0,0.0,0.0,  0.0,1.0,0.0);
+    gl_Position = my_orth_matrix*my_viewMatrix*position;
     //texcoord = position.xy/10.0 * vec2(0.5) + vec2(0.5);
     fade_factor = sin(timer) * 0.5 + 0.5;
     g_color = color;
