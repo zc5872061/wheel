@@ -136,18 +136,31 @@ static GLuint make_program(GLuint vertex_shader, GLuint fragment_shader)
  * Data used to seed our vertex array and element array buffers:
  */
 static const GLfloat g_vertex_buffer_data[] = {
+    
+    //left
+    -2.5f,  2.5, -5.0f, 1.0f,
+    -2.5f, -2.5f, -5.0f, 1.0f,
+    -2.5f,  2.5, -10.0f, 1.0f,
+    -2.5f, -2.5f, -10.0f, 1.0f,
+    
     //front
-    -1.0f, -1.0f, -5.0f, 1.0f,
-     1.0, -1.0f, -5.0f, 1.0f,
-    -1.0f,  1.0, -5.0f, 1.0f,
-     1.0,  1.0, -5.0f, 1.0f,
+    -2.5f, -2.5f, -5.0f, 1.0f,
+     2.5, -2.5f, -5.0f, 1.0f,
+    -2.5f,  2.5, -5.0f, 1.0f,
+     2.5,  2.5, -5.0f, 1.0f,
     
     
     //back
-    -2.0f, -1.0f, -8.0f, 1.0f,
-    2.0, -1.0f, -8.0f, 1.0f,
-    -2.0f,  1.0, -8.0f, 1.0f,
-    2.0,  1.0, -8.0f, 1.0f,
+    -2.5f, -2.5f, -10.0f, 1.0f,
+    2.5, -2.5f, -10.0f, 1.0f,
+    -2.5f,  2.5, -10.0f, 1.0f,
+    2.5,  2.5, -10.0f, 1.0f,
+    
+    //right
+    2.5f,  2.5, -5.0f, 1.0f,
+    2.5f, -2.5f, -5.0f, 1.0f,
+    2.5f,  2.5, -10.0f, 1.0f,
+    2.5f, -2.5f, -10.0f, 1.0f,
 
 };
 
@@ -158,15 +171,24 @@ static const GLfloat g_vertex_buffer_color[] = {
     0.0f,0.0f,1.0f,1.0f,
     0.0f,0.0f,0.0f,1.0f,
     
+    //left
+    1.0f, 0.0f,0.0f,1.0f,
+    0.0f,1.0f,0.0f,1.0f,
+    0.0f,0.0f,1.0f,1.0f,
+    0.0f,0.0f,0.0f,1.0f,
+    
     //back
     1.0f, 0.0f,0.0f,1.0f,
     0.0f,1.0f,0.0f,1.0f,
     0.0f,0.0f,1.0f,1.0f,
     0.0f,0.0f,0.0f,1.0f,
-//    1.0f, 0.0f,0.0f,1.0f,
-//    0.0f,1.0f,0.0f,1.0f,
-//    0.0f,0.0f,1.0f,1.0f,
-//    0.0f,0.0f,0.0f,1.0f
+    
+    
+    //right
+    1.0f, 0.0f,0.0f,1.0f,
+    0.0f,1.0f,0.0f,1.0f,
+    0.0f,0.0f,1.0f,1.0f,
+    0.0f,0.0f,0.0f,1.0f,
 };
 
 static const GLfloat g_texcoord[] = {
@@ -180,6 +202,18 @@ static const GLfloat g_texcoord[] = {
     1.0f,0.0f,
     0.0f,1.0f,
     1.0f,1.0f,
+    //left
+    0.0f,0.0f,
+    1.0f,0.0f,
+    0.0f,1.0f,
+    1.0f,1.0f,
+    
+    //right
+    0.0f,0.0f,
+    1.0f,0.0f,
+    0.0f,1.0f,
+    1.0f,1.0f,
+    
 };
 
 //static const GLfloat g_vertex_buffer_data[] = {
@@ -187,8 +221,8 @@ static const GLfloat g_texcoord[] = {
 //    100.0, 0.0f, 0.0f, 1.0f,
 //    0.0f,  100.0, 0.0f, 1.0f,
 //    100.0, 100.0, 0.0f, 1.0f
-//};
-static const GLushort g_element_buffer_data[] = {0,1,2,1,2,3,4,5,6,5,6,7};
+//};4,5,7,4,6,7
+static const GLushort g_element_buffer_data[] = {0,1,2,1,2,3,4,5,7,4,6,7,8,9,11,8,10,11,12,13,14,13,14,15};
 
 /*
  * Load and create all of our resources:
@@ -324,7 +358,7 @@ static void render(void)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, g_resources.element_buffer);
     glDrawElements(
         GL_TRIANGLES,  /* mode */
-        12,                  /* count */
+        24,                  /* count */
         GL_UNSIGNED_SHORT,  /* type */
         (void*)0            /* element array buffer offset */
     );

@@ -140,7 +140,7 @@ void main()
         //* position;
     //mat4 my_perspective = view_frustum(radians(45.0), 4.0/3.0, -5.0, 50.0);
     mat4 my_perspective = calculatePerspective(70.0, 4.0/3.0, 4.0, 1500.0);
-    mat4 my_viewMatrix = view_matrix(1.0,1.5,4.0,  0.0,0.0,0.0,  0.0,1.0,0.0);
+    mat4 my_viewMatrix = view_matrix(-10.0,10.0,5.0,  0.0,0.0,0.0,  0.0,1.0,0.0);
     mat4 my_orth_matrix = orth_matrix(0.0,800.0,0.0,600.0, -1.0, 1.5);
     
     gl_Position = my_perspective*my_viewMatrix*position;
