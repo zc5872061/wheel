@@ -12,7 +12,7 @@
  */
 
 static struct {
-    GLuint vertex_buffer, element_buffer;
+    GLuint vertex_buffer,color_buffer,texcood_buffer, element_buffer;
     GLuint textures[2];
     GLuint vertex_shader, fragment_shader, program;
     
@@ -23,6 +23,8 @@ static struct {
 
     struct {
         GLint position;
+        GLint color;
+        GLint texcoord;
     } attributes;
 
     GLfloat timer;
@@ -133,13 +135,60 @@ static GLuint make_program(GLuint vertex_shader, GLuint fragment_shader)
 /*
  * Data used to seed our vertex array and element array buffers:
  */
-static const GLfloat g_vertex_buffer_data[] = { 
-    -1.0f, -1.0f, 0.0f, 1.0f,
-     1.0f, -1.0f, 0.0f, 1.0f,
-    -1.0f,  1.0f, 0.0f, 1.0f,
-     1.0f,  1.0f, 0.0f, 1.0f
+static const GLfloat g_vertex_buffer_data[] = {
+    //front
+    -1.0f, -1.0f, -5.0f, 1.0f,
+     1.0, -1.0f, -5.0f, 1.0f,
+    -1.0f,  1.0, -5.0f, 1.0f,
+     1.0,  1.0, -5.0f, 1.0f,
+    
+    
+    //back
+    -2.0f, -1.0f, -8.0f, 1.0f,
+    2.0, -1.0f, -8.0f, 1.0f,
+    -2.0f,  1.0, -8.0f, 1.0f,
+    2.0,  1.0, -8.0f, 1.0f,
+
 };
-static const GLushort g_element_buffer_data[] = { 0, 1, 2, 3 };
+
+static const GLfloat g_vertex_buffer_color[] = {
+    //front
+    1.0f, 0.0f,0.0f,1.0f,
+    0.0f,1.0f,0.0f,1.0f,
+    0.0f,0.0f,1.0f,1.0f,
+    0.0f,0.0f,0.0f,1.0f,
+    
+    //back
+    1.0f, 0.0f,0.0f,1.0f,
+    0.0f,1.0f,0.0f,1.0f,
+    0.0f,0.0f,1.0f,1.0f,
+    0.0f,0.0f,0.0f,1.0f,
+//    1.0f, 0.0f,0.0f,1.0f,
+//    0.0f,1.0f,0.0f,1.0f,
+//    0.0f,0.0f,1.0f,1.0f,
+//    0.0f,0.0f,0.0f,1.0f
+};
+
+static const GLfloat g_texcoord[] = {
+    //front
+    0.0f,0.0f,
+    1.0f,0.0f,
+    0.0f,1.0f,
+    1.0f,1.0f,
+    //back
+    0.0f,0.0f,
+    1.0f,0.0f,
+    0.0f,1.0f,
+    1.0f,1.0f,
+};
+
+//static const GLfloat g_vertex_buffer_data[] = {
+//    0.0f, 0.0f, 0.0f, 1.0f,
+//    100.0, 0.0f, 0.0f, 1.0f,
+//    0.0f,  100.0, 0.0f, 1.0f,
+//    100.0, 100.0, 0.0f, 1.0f
+//};
+static const GLushort g_element_buffer_data[] = {0,1,2,1,2,3,4,5,6,5,6,7};
 
 /*
  * Load and create all of our resources:
@@ -151,12 +200,27 @@ static int make_resources(const char *vertex_shader_file)
         g_vertex_buffer_data,
         sizeof(g_vertex_buffer_data)
     );
+    
+    g_resources.color_buffer = make_buffer(
+        GL_ARRAY_BUFFER,
+        g_vertex_buffer_color,
+        sizeof(g_vertex_buffer_color)
+    );
+    
+    g_resources.texcood_buffer = make_buffer(
+        GL_ARRAY_BUFFER,
+        g_texcoord,
+        sizeof(g_texcoord)
+    );
+    
     g_resources.element_buffer = make_buffer(
         GL_ELEMENT_ARRAY_BUFFER,
         g_element_buffer_data,
         sizeof(g_element_buffer_data)
     );
-
+    
+    
+    
     g_resources.textures[0] = make_texture("/Users/chukie/wheel/OpenglStudy/FreeType2Demo/test2/hello1.tga");
     g_resources.textures[1] = make_texture("/Users/chukie/wheel/OpenglStudy/FreeType2Demo/test2/hello2.tga");
 
@@ -190,25 +254,29 @@ static int make_resources(const char *vertex_shader_file)
 
     g_resources.attributes.position
         = glGetAttribLocation(g_resources.program, "position");
-
+    g_resources.attributes.color
+        = glGetAttribLocation(g_resources.program,"color");
+    g_resources.attributes.texcoord
+        = glGetAttribLocation(g_resources.program,"texcoord");
     return 1;
 }
 
-/*
- * GLUT callbacks:
- */
+
 static void update_timer(void)
 {
     int milliseconds = glutGet(GLUT_ELAPSED_TIME);
     g_resources.timer = (float)milliseconds * 0.001f;
-    glutPostRedisplay();
+    //glutPostRedisplay();
 }
 
 static void render(void)
 {
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-
+    glClearColor(0.0f, 0.25f, 0.3f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    glEnable(GL_DEPTH_TEST);
+    
+    glDisable(GL_CULL_FACE);
     glUseProgram(g_resources.program);
 
     glUniform1f(g_resources.uniforms.timer, g_resources.timer);
@@ -220,7 +288,28 @@ static void render(void)
     glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D, g_resources.textures[1]);
     glUniform1i(g_resources.uniforms.textures[1], 1);
-
+    
+    glBindBuffer(GL_ARRAY_BUFFER,g_resources.color_buffer);
+    glVertexAttribPointer(g_resources.attributes.color,
+                          4,
+                          GL_FLOAT,
+                          GL_FALSE,
+                          sizeof(GLfloat)*4,
+                          (void*)0
+    );
+    glEnableVertexAttribArray(g_resources.attributes.color);
+    
+    glBindBuffer(GL_ARRAY_BUFFER,g_resources.texcood_buffer);
+    glVertexAttribPointer(g_resources.attributes.texcoord,
+                          2,
+                          GL_FLOAT,
+                          GL_FALSE,
+                          sizeof(GLfloat)*2,
+                          (void*)0
+                          );
+    glEnableVertexAttribArray(g_resources.attributes.texcoord);
+    
+    
     glBindBuffer(GL_ARRAY_BUFFER, g_resources.vertex_buffer);
     glVertexAttribPointer(
         g_resources.attributes.position,  /* attribute */
@@ -234,28 +323,28 @@ static void render(void)
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, g_resources.element_buffer);
     glDrawElements(
-        GL_TRIANGLE_STRIP,  /* mode */
-        4,                  /* count */
+        GL_TRIANGLES,  /* mode */
+        12,                  /* count */
         GL_UNSIGNED_SHORT,  /* type */
         (void*)0            /* element array buffer offset */
     );
 
     glDisableVertexAttribArray(g_resources.attributes.position);
+    glClear(GL_DEPTH_BUFFER_BIT);
     glutSwapBuffers();
 }
 
-/*
- * Entry point
- */
 int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
-    glutInitWindowSize(400, 300);
+    glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH | GLUT_DOUBLE);
+    glutInitWindowSize(800, 600);
     glutCreateWindow("Hello World");
     glutIdleFunc(&update_timer);
-    glutDisplayFunc(&render);
 
+    
+    glutDisplayFunc(&render);
+    
     glewInit();
     if (!GLEW_VERSION_2_0) {
         fprintf(stderr, "OpenGL 2.0 not available\n");
