@@ -62,7 +62,7 @@ void main()
             * translate(1.0, 0.0, 2.0)
             //* rotate_x(timer)
             * scale(4.0/3.0, 1.0, 1.0)
-            * position;
+    * position;
     texcoord = position.xy * vec2(0.5) + vec2(0.5);
     fade_factor = sin(timer) * 0.5 + 0.5;
 }

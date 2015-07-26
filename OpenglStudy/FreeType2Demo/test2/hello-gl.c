@@ -138,40 +138,49 @@ static GLuint make_program(GLuint vertex_shader, GLuint fragment_shader)
 static const GLfloat g_vertex_buffer_data[] = {
     
     //left
-    -2.5f,  2.5, -5.0f, 1.0f,
-    -2.5f, -2.5f, -5.0f, 1.0f,
-    -2.5f,  2.5, -10.0f, 1.0f,
-    -2.5f, -2.5f, -10.0f, 1.0f,
-    
-//    //front
-//    -2.5f, -2.5f, -5.0f, 1.0f,
-//     2.5, -2.5f, -5.0f, 1.0f,
-//    -2.5f,  2.5, -5.0f, 1.0f,
-//     2.5,  2.5, -5.0f, 1.0f,
-    
-    //front
-    0.0f, 0.0f, -1.0f, 1.0f,
-    800.0f, 0.0f, -1.0f, 1.0f,
-    0.0f,  600.0f, -1.0f, 1.0f,
-    800.0, 600.0f, -1.0f, 1.0f,
-//    //back
-//    -2.5f, -2.5f, -10.0f, 1.0f,
-//    2.5, -2.5f, -10.0f, 1.0f,
-//    -2.5f,  2.5, -10.0f, 1.0f,
-//    2.5,  2.5, -10.0f, 1.0f,
-
-    //back
-    0.0f, 0.0f, -0.0f, 1.0f,
-    400.0f, 0.0f, -0.0f, 1.0f,
-    0.0f,  300.0f, -0.0f, 1.0f,
-    400.0, 300.0f, -0.0f, 1.0f,
-    //right
-    2.5f,  2.5, -5.0f, 1.0f,
-    2.5f, -2.5f, -5.0f, 1.0f,
-    2.5f,  2.5, -10.0f, 1.0f,
-    2.5f, -2.5f, -10.0f, 1.0f,
+    -1.0f,  1.0, -10.0f, 1.0f,
+    -1.0f, -1.0f, -10.0f, 1.0f,
+    1.0f,  -1.0f, -10.0f, 1.0f,
+    1.0f, 1.0f, -10.0f, 1.0f,
 
 };
+//static const GLfloat g_vertex_buffer_data[] = {
+//    
+//    //left
+//    -2.5f,  2.5, -5.0f, 1.0f,
+//    -2.5f, -2.5f, -5.0f, 1.0f,
+//    -2.5f,  2.5, -10.0f, 1.0f,
+//    -2.5f, -2.5f, -10.0f, 1.0f,
+//    
+////    //front
+////    -2.5f, -2.5f, -5.0f, 1.0f,
+////     2.5, -2.5f, -5.0f, 1.0f,
+////    -2.5f,  2.5, -5.0f, 1.0f,
+////     2.5,  2.5, -5.0f, 1.0f,
+//    
+//    //front
+//    0.0f, 0.0f, -1.0f, 1.0f,
+//    800.0f, 0.0f, -1.0f, 1.0f,
+//    0.0f,  600.0f, -1.0f, 1.0f,
+//    800.0, 600.0f, -1.0f, 1.0f,
+////    //back
+////    -2.5f, -2.5f, -10.0f, 1.0f,
+////    2.5, -2.5f, -10.0f, 1.0f,
+////    -2.5f,  2.5, -10.0f, 1.0f,
+////    2.5,  2.5, -10.0f, 1.0f,
+//
+//    //back
+//    0.0f, 0.0f, -0.0f, 1.0f,
+//    400.0f, 0.0f, -0.0f, 1.0f,
+//    0.0f,  300.0f, -0.0f, 1.0f,
+//    400.0, 300.0f, -0.0f, 1.0f,
+//    //right
+//    2.5f,  2.5, -5.0f, 1.0f,
+//    2.5f, -2.5f, -5.0f, 1.0f,
+//    2.5f,  2.5, -10.0f, 1.0f,
+//    2.5f, -2.5f, -10.0f, 1.0f,
+//
+//};
 
 static const GLfloat g_vertex_buffer_color[] = {
     //front
@@ -231,7 +240,8 @@ static const GLfloat g_texcoord[] = {
 //    0.0f,  100.0, 0.0f, 1.0f,
 //    100.0, 100.0, 0.0f, 1.0f
 //};4,5,7,4,6,7
-static const GLushort g_element_buffer_data[] = {0,1,2,1,2,3,4,5,7,4,6,7,8,9,11,8,10,11,12,13,14,13,14,15};
+//static const GLushort g_element_buffer_data[] = {0,1,2,1,2,3,4,5,7,4,6,7,8,9,11,8,10,11,12,13,14,13,14,15};
+static const GLushort g_element_buffer_data[] = {0,1,2,0,2,3};
 
 /*
  * Load and create all of our resources:
@@ -264,8 +274,8 @@ static int make_resources(const char *vertex_shader_file)
     
     
     
-    g_resources.textures[0] = make_texture("/Users/chukie/wheel/OpenglStudy/FreeType2Demo/test2/hello1.tga");
-    g_resources.textures[1] = make_texture("/Users/chukie/wheel/OpenglStudy/FreeType2Demo/test2/hello2.tga");
+    g_resources.textures[0] = make_texture("/Users/chukie/Study/WorkWork/wheel/OpenglStudy/FreeType2Demo/test2/hello1.tga");
+    g_resources.textures[1] = make_texture("/Users/chukie/Study/WorkWork/wheel/OpenglStudy/FreeType2Demo/test2/hello2.tga");
 
     if (g_resources.textures[0] == 0 || g_resources.textures[1] == 0)
         return 0;
@@ -279,7 +289,7 @@ static int make_resources(const char *vertex_shader_file)
 
     g_resources.fragment_shader = make_shader(
         GL_FRAGMENT_SHADER,
-        "/Users/chukie/wheel/OpenglStudy/FreeType2Demo/test2/hello-gl.f.glsl"
+        "/Users/chukie/Study/WorkWork/wheel/OpenglStudy/FreeType2Demo/test2/hello-gl.f.glsl"
     );
     if (g_resources.fragment_shader == 0)
         return 0;
@@ -367,7 +377,7 @@ static void render(void)
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, g_resources.element_buffer);
     glDrawElements(
         GL_TRIANGLES,  /* mode */
-        24,                  /* count */
+        6,                  /* count */
         GL_UNSIGNED_SHORT,  /* type */
         (void*)0            /* element array buffer offset */
     );
@@ -394,7 +404,7 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    if (!make_resources(argc >= 2 ? argv[1] : "/Users/chukie/wheel/OpenglStudy/FreeType2Demo/test2/view-frustum-rotation.v.glsl")) {
+    if (!make_resources(argc >= 2 ? argv[1] : "/Users/chukie/Study/WorkWork/wheel/OpenglStudy/FreeType2Demo/test2/hello-gl.v.glsl")) {
         fprintf(stderr, "Failed to load resources\n");
         return 1;
     }
